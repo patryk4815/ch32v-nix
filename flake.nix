@@ -21,7 +21,8 @@
         in
         {
           blackmagic = pkgs.callPackage ./blackmagic.nix { inherit pkgs; };
-          openocd = pkgs.callPackage ./openocd.nix { inherit pkgs; };
+          openocd = pkgs.callPackage ./openocd-wch.nix { inherit pkgs; };
+          openocd-rpi = pkgs.callPackage ./openocd-rpi.nix { inherit pkgs; };
         }
       );
       formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-tree);
